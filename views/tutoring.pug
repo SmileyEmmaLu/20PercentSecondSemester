@@ -1,0 +1,65 @@
+doctype html
+
+html(lang='en')
+  head
+    include menu.pug
+    script(src='jquery-3.3.1.min.js')
+  body
+    .jumbotron.text-center
+      h1 Peer Tutoring
+    title Tool Bar
+    
+
+    include navbar.pug
+
+
+.container
+  form#contact-form(method='post' action='tutoring' role='form')
+    .messages
+    .controls
+      .row
+        .col-md-6
+          .form-group
+            label(for='form_name') Tutor Name *
+            input#form_name.form-control(type='text' name='tutorname' placeholder='Tutor name *' required='required' data-error='Firstname is required.')
+            .help-block.with-errors
+        .col-md-6
+          .form-group
+            label(for='form_lastname') Tutee's Name *
+            input#form_lastname.form-control(type='text' name='tuteename' placeholder='Tutee name *' required='required' data-error='Lastname is required.')
+            .help-block.with-errors
+      .row
+        .col-md-6
+          .form-group
+            label(for='form_email') Tutor Email *
+            input#form_email.form-control(type='email' name='tutoremail' placeholder='Tutor email *' required='required' data-error='Valid email is required.')
+            .help-block.with-errors
+        .col-md-6
+          .form-group
+            label(for='form_email') Tutee Email *
+            input#form_email.form-control(type='email' name='tuteeemail' placeholder='Tutee email *' required='required' data-error='Valid email is required.')
+            .help-block.with-errors
+      .row
+        .col-md-6
+          .form-group
+            label(for='form_email') Tutoring Date *
+            input#form_email.form-control(type='date' name='tutorDate' placeholder='Tutoring Date *' required='required' data-error='Valid date is required.')
+            .help-block.with-errors
+        .col-md-6
+          .form-group
+            label(for='form_email') Tutoring Time *
+            input#form_email.form-control(type='time' name='tutorTime' placeholder='Tutoring Time *' required='required' data-error='Valid time is required.')
+            .help-block.with-errors
+      .row
+        .col-md-12
+          .form-group
+            label(for='form_message') Comments *
+            textarea#form_message.form-control(name='message' placeholder='Additional comments *' rows='4' 
+            required='required' data-error='Please,leave us a message.')
+            .help-block.with-errors
+      .row
+        .col-md-6
+          input.btn.btn-success.btn-send(type='submit' value='Send message')
+      .row
+        .col-md-12
+          
